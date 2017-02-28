@@ -62,7 +62,7 @@ for($i=0;$i<$count_;$i++)
     $html.="-->文件".$url[$i]."打包已完成。</br>";
     file_put_contents($foldername."/".$content->items[$i]->key,file_get_contents($url[0]));
 }
-include("zip.php");//引用压缩类
+include("zip.php");//引用压缩类 压缩支持：http://www.phpconcept.net/pclzip/
 $zip = new PclZip($foldername.".zip");//压缩文件
 $zip->create($foldername); 
 $html.="==>打包完成，开始准备下载！<b>请在下载完成后关闭本页面,否则会造成文件缺失。</b></br>";
